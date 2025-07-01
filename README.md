@@ -76,11 +76,11 @@ Your journey will take you through the wildness of the American Midwest and acro
 ```
 
 1. In the **main** module, one of the first lines of code is `const drovers = hireDrovers(cattleToDrive)`. Explain what the value of the `drovers` variable is when that line of code runs.
-   > Your answer here
+   > The `drovers` variable is one that calls the function to select specific drovers(aka herders) from database.js under the drovers object. The number of drovers is based on the number of cattle that are REQUIRED to be drove. This will return an array of objects which will be used in the console.log() messages near the bottom of the main.js file
 2. At the bottom of the main module, you will see the following code - `for (const drover of drovers)`. Explain what the values of both the `drover` and the `drovers` variables are.
-   > Your answer here
+   > At the bottom of the main module where we see `for (const drover of drovers)`, drover is the current object being identified inside of the drovers array, meanwhile drovers is the array being iterated over. This syntax is unique to the for...of loop as it seeks to make all iterated items in an array of objects accessible in a duplicated fasion.
 3. In the **journey** module, there is a `journeyMaker()` function. In that function, there is a variable named `areas` which will have the value of an object. Use your debugger to show what the value of each key is on that object. Use [Loom](https://www.loom.com) to record your session.
-   > Your public Loom URL here
+   > [Question #3 Loom](https://www.loom.com/share/d63bef8b1ce249fa9aca4b85f0533fb3?sid=366a003a-7f68-454a-a29c-ae1faabea119)
 4. Also in the **journey** module, there is the following code:
    ```js
    for (let forestNumber = 0; forestNumber < areas.forests; forestNumber++) {
@@ -88,11 +88,12 @@ Your journey will take you through the wildness of the American Midwest and acro
    }
    ```
    Explain this code with your best vocabulary.
-   > Your answer here
+   > This is a standard for loop. The first portion of the statement is the intialization, where the value of the variable is started at(let forestNumber = 0). The second portion of the statement is the condition, where everytime the loop is triggered it will determine if the condition is true or false. The condition at hand is determining whether or not the current value of forestNumber is still less than the generated number of forests(areas.forests). When forestNumber is no longer less than areas.forests, the condition is false and thus the for loop is complete. The last portion of the statement is the incrementation, where we decide whether the forestNumber value is increasing or decreasing. The use of the double + is increasing the value by one, but it can also be -- for decreasing a value by one or +=3/-=3 to increase/decrease a value by 3 for example. Lastly we enter the for loop, where we see an array method. This method says that for everytime the loop is executed the string labeled "forest" will be added to the journey array.
+
 5. Explain the value of the `database` variable in the **database** module. Be as comprehensive as possible.
-   > Your answer here
+   > The database variable in the **database** module is an object that two significant key:value pairs inside of it. The first key:value pair is dataset for cattle types and the second key:value pair is dataset for drovers. Both key:value pairs share a similar format, in that both have a proper name to represent the key and contents in the value, and both have an array that hold objects defining their contents as the value. Having the properties of an array allow for object searching through array index methods, and the objects inside of these arrays hold defining information that can be utilized in other files.
 6. In the **drovers** module, there is a `hireDrovers()` function. You will notice the following code on that line - `(herdSize)`. What is that defining, and where does it get its value?
-   > Your answer here
+   > Due to confusing naming convention, I changed the name from `(herdSize)` to `(cattleHerdSize)`. cattleHerdSize is defining the number of cattle that are going to be drove during the journey, which will impact the number of drovers that are needed for hire. By default it is 50 cattle, so there needs to be 5 drovers, but if there were 100 cattle then there would need be 10 drovers. As to where `(cattleHerdSize)` receives it's value, it comes from the main.js file where the application is centralized, and where hireDrovers() is being called.
 
 ## When You Are Done
 
